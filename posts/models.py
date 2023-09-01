@@ -27,7 +27,7 @@ class Post(models.Model):
         null=True
     )
     body = models.TextField(
-        _('Article Field', 'body'),
+        _('Post Field', 'body'),
         blank=True,
         null=True
     )
@@ -52,8 +52,8 @@ class Post(models.Model):
         """Like a post."""
         profile.liked_posts.add(self)
 
-    def dislike_article(self, profile):
-        """Dislike an article."""
+    def dislike_post(self, profile):
+        """Dislike a post."""
         profile.disliked_posts.add(self)
 
     def unlike_post(self, profile):
