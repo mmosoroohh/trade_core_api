@@ -3,7 +3,7 @@
 from django.db import models
 from django.utils.translation import pgettext_lazy as _
 from django.contrib.auth import get_user_model
-from ..user_profile.models import Profile
+from user_profile.models import Profile
 
 
 class Post(models.Model):

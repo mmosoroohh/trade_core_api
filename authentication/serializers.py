@@ -38,8 +38,8 @@ class RegistrationSerializer(serializers.ModelSerializer):
             )
         ],
         error_messages= {
-            'invalid': 'Sorry, invalid username. No spaces or special characters allowed!'
-            'required': 'Sorry, username is required!'
+            'invalid': 'Sorry, invalid username. No spaces or special characters allowed!',
+            'required': 'Sorry, username is required!',
             'min_length': 'Sorry, username must have atleast 3 characters!'
         }
     )
