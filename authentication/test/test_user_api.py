@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APIClient
 from faker import Factory
-from authors.apps.factories import UserFactory
+from trade_core.factories import UserFactory
 from django.contrib.auth import get_user_model
 
 # This creates an instance of the factory used to make mock data
