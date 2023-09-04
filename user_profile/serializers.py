@@ -5,7 +5,6 @@ from django.contrib.auth import get_user_model
 
 from .models import Profile
 User = get_user_model()
-# Readers = apps.get_model('read_stats', 'Readers')
 
 
 class ProfileListSerializer(serializers.ModelSerializer):

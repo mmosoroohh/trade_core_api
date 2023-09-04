@@ -58,7 +58,7 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
     renderer_classes = (UserJSONRenderer,)
     serializer_class = UserSerializer
 
-    async def get(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         """Retrieve user details asynchronously"""
         serializer = self.serializer_class(request.user)
 

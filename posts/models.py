@@ -1,5 +1,4 @@
 """Define the posts model."""
-
 from django.db import models
 from django.utils.translation import pgettext_lazy as _
 from django.contrib.auth import get_user_model
@@ -67,7 +66,7 @@ class Post(models.Model):
     class Meta:
         """define metadata."""
 
-        app_label = 'post'
+        app_label = 'posts'
 
     def __str__(self):
         """Print out as title."""

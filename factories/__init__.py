@@ -1,2 +1,2 @@
-from .posts import *
-from .user import *
+from factories.posts import PostFactory
+from factories.user import UserFactory
