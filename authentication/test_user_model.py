@@ -3,7 +3,7 @@ from django.urls import reverse
 from rest_framework.test import APIClient
 from faker import Factory
 
-from factories.user import UserFactory
+from factories.users import UserFactory
 from django.contrib.auth import get_user_model
 
 # This creates an instance of the factory used to make mock data

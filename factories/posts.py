@@ -1,9 +1,9 @@
 import factory
 from faker import Factory
 from django.apps import apps
-from factories import UserFactory
+from factories.users import UserFactory
 
-from ..posts import Post
+from posts.models import Post
 faker = Factory.create()
 
 

@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APIClient
 from faker import Factory
-from factories.user import UserFactory
+from factories.users import UserFactory
 from django.contrib.auth import get_user_model
 
 # This creates an instance of the factory used to make mock data
@@ -93,3 +93,4 @@ class UserTest(TestCase):
         self.assertEqual(400, response2.status_code)
         self.assertEqual(400, response3.status_code)
         self.assertEqual(400, response4.status_code)
+        self.assertContains(response, self.user)

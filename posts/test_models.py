@@ -3,9 +3,10 @@ from django.test import TestCase
 # Create your tests here.
 from django.test import TestCase
 from django.apps import apps
-from ...factories import PostFactory
+from factories.posts import PostFactory
 
-from ..models import Post
+
+from .models import Post
 
 
 class ProfileModelTest(TestCase):
