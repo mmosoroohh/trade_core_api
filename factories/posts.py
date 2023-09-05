@@ -1,13 +1,13 @@
 import factory
 from faker import Factory
 from django.apps import apps
-from . import UserFactory
+from factories import UserFactory
 
 from ..posts import Post
 faker = Factory.create()
 
 
-class PostFactory(factory.DjangoModelFactory):
+class PostFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Post
 
