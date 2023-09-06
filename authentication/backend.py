@@ -39,7 +39,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
             If not, return error.
         """
         try:
-            payload = jwt.decode(token, settings.SECRET_KEY)
+            payload = jwt.decode(token, options={'verify_signature': False})
         except Exception as e:
             if e.__class__.__name__ == 'DecodeError':
                 raise exceptions.AuthenticationFailed('Cannot decode token!')

@@ -89,7 +89,7 @@ class UserTest(TestCase):
         response4 = self.client.post(self.login_url, self.not_exist, format='json')
 
         self.assertEqual(200, response.status_code)
-        self.assertIsNotNone(json.loads(response.content).get('user').get('token'))
+        self.assertIsNotNone(json.loads(response.content).get('token'))
         self.assertEqual(400, response2.status_code)
         self.assertEqual(400, response3.status_code)
         self.assertEqual(400, response4.status_code)
