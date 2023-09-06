@@ -38,7 +38,6 @@ class RegistrationAPIView(CreateAPIView):
         response = requests.get(f'https://ipinfo.io/{user_ip}/json')
         data = response.json()
         user_country = data.get('country')
-        # import pdb;pdb.set_trace()
 
         # Get the list of holidays for the user's country
         try:
@@ -48,31 +47,15 @@ class RegistrationAPIView(CreateAPIView):
         
         # Check if the signup date is a holiday
         signup_date = datetime.now().date()  # You can replace this with the actual signup date
-        is_holiday = False
+        is_holiday = True
         
 
         if holiday_list:
             is_holiday = signup_date in holiday_list
 
-        # Save the signup information along with the holiday status
-        # Replace this with your actual signup data saving logic
-        # Example: user = User.objects.create(username=username, ...)
-        
-        # Return a response indicating whether it's a holiday
-        # Return a response indicating whether it's a holiday
-        # serializer = self.serializer_class(
-        #     data=user, context={'request': request})
-        # serializer.is_valid(raise_exception=True)
-        # serializer.save()
-        # success_message={
-        #     "success": "Please check your email for a link to complete your registration!"
-        # }
-        # return Response(success_message, status=status.HTTP_201_CREATED)
-        #     return Response({'message': 'Signup successful', 'is_holiday': is_holiday})
-        # return Response({'message': 'Invalid request method'}, status=400)
-
+        data.update({'is_holiday':is_holiday})
         serializer = self.serializer_class(
-            data=user, context={'request': request})
+            data=user, context={'request': request}, )
         serializer.is_valid(raise_exception=True)
         serializer.save()
         success_message={

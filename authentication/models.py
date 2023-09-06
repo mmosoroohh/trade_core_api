@@ -82,6 +82,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     # A timestamp representing when this object was last updated
     updated_at = models.DateField(auto_now=True)
 
+    # To save True or False if it's a holiday once user register `created_at` field
+    is_holiday = models.BooleanField(default=False)
+
     # More fields required by Django when specifying a custom user model.
 
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
