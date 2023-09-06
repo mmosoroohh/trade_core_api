@@ -8,7 +8,7 @@
 In order to install and run this project locally, you would need to have the following installed on you local machine.
 
 - **Python 3+**
-- **Django 4+**
+- **Django 3+**
 - **Postgresql**
 
 ### Installation
