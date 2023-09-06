@@ -31,6 +31,10 @@ In order to install and run this project locally, you would need to have the fol
 
 * Run development server
 
+* To run tests `python manage.py test`
+
+* To run test coverage `coverage report -m`
+
 
 ## Testing API endpoints
 <table>
