@@ -37,6 +37,10 @@ class PostApiTest(TestCase):
     def test_create_post_api(self):
         response = self.client.post(self.create_url, self.body, format='json')
         self.assertEqual(200, response.status_code)
+        self.assertEqual(response.data['title'], self.body['title'])
+        self.assertEqual(response.data['body'], self.body['body'])
+        self.assertEqual(response.data['description'], self.body['description'])
+    
 
     def test_retrieve_post_api(self):
         response = self.client.get(self.retrieve_url)
@@ -46,13 +50,13 @@ class PostApiTest(TestCase):
         response = self.client.get(self.list_url)
         self.assertContains(response, self.post)
 
-    # def test_update_posts_api(self):
-    #     response = self.client.post(self.create_url, self.body, format='json')
-    #     self.update_url = reverse(
-    #         self.namespace + ':posts-detail', kwargs={'pk': response.data.get('id')})
-    #     response = self.client.put(self.update_url, self.body)
+    def test_update_posts_api(self):
+        response = self.client.post(self.create_url, self.body, format='json')
+        self.update_url = reverse(
+            self.namespace + ':posts-detail', kwargs={'pk': response.data.get('id')})
+        response = self.client.put(self.update_url, self.body)
         
-    #     self.assertEqual(200, response.status_code)
+        self.assertEqual(200, response.status_code)
 
     def test_delete_post_api(self):
         response = self.client.post(self.create_url, self.body, format='json')

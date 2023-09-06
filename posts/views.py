@@ -53,7 +53,7 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
         try:
             post = self.queryset.get(pk=kwargs["pk"])
             serializer = PostSerializer()
-            update_post = serializer.update, post, request.data
+            update_post = serializer.update(post, request.data)
             return Response(PostSerializer(update_post).data)
         except Post.DoesNotExist:
             return Response(
@@ -66,7 +66,7 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         try:
             post = self.queryset.get(pk=kwargs["pk"])
-            post.delete
+            post.delete()
             return Response(status=status.HTTP_200_OK)
         except Post.DoesNotExist:
             return Response(
