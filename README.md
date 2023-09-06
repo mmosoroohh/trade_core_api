@@ -25,7 +25,7 @@ In order to install and run this project locally, you would need to have the fol
 
 * Run the command `python3 manage.py makemigrations` 
 
-* Run the command `python3 manage.py migrate` to create and sync the postgresql database (you must have the database previously created with name 'hub_db').
+* Run the command `python3 manage.py migrate` to create and sync the postgresql database (you must have the database previously created with name 'trade_core_db').
 
 * Run the command `python3 manage.py runserver`
 
