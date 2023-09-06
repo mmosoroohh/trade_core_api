@@ -54,7 +54,7 @@ In order to install and run this project locally, you would need to have the fol
 </tr>
 <tr>
 <td>View a single user</td>
-<td>/api/users/</td>
+<td>/users/details/</td>
 <td>GET</td>
 </tr>
 <tr>
