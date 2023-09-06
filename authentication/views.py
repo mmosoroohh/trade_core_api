@@ -47,7 +47,7 @@ class RegistrationAPIView(CreateAPIView):
         
         # Check if the signup date is a holiday
         signup_date = datetime.now().date()  # You can replace this with the actual signup date
-        is_holiday = True
+        is_holiday = False
         
 
         if holiday_list:
