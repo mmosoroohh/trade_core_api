@@ -85,12 +85,12 @@ In order to install and run this project locally, you would need to have the fol
 <tr>
 <td>Like a single post</td>
 <td>/api/posts/like/<:id></td>
-<td>GET</td>
+<td>POST</td>
 </tr>
 <tr>
 <td>Unlike a single post</td>
 <td>/api/posts/dislike/<:id></td>
-<td>GET</td>
+<td>POST</td>
 </tr>
 <tr>
 
