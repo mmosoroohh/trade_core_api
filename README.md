@@ -40,13 +40,53 @@ In order to install and run this project locally, you would need to have the fol
 </tr>
 <tr>
 <td>Register a user</td>
-<td>/api/users/register</td>
+<td>/users/register/</td>
 <td>POST</td>
 </tr>
 <tr>
 <td>Login a user</td>
-<td>/api/users/login</td>
+<td>/users/login/</td>
 <td>POST</td>
+</tr>
+<tr>
+<td>View a single user</td>
+<td>/api/users/</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>Create a post </td>
+<td>/api/posts/</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>View all posts</td>
+<td>/api/posts/</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>View a single post</td>
+<td>/api/posts/<:id></td>
+<td>GET</td>
+</tr>
+<tr>
+<td>Update a post</td>
+<td>/api/posts/<:id></td>
+<td>PUT</td>
+</tr>
+<tr>
+<td>Delete a single post</td>
+<td>/api/posts/<:id></td>
+<td>DELETE</td>
+</tr>
+<tr>
+<td>Like a single post</td>
+<td>/api/posts/like/<:id></td>
+<td>GET</td>
+</tr>
+<tr>
+<td>Unlike a single post</td>
+<td>/api/posts/dislike/<:id></td>
+<td>GET</td>
 </tr>
 <tr>
 
