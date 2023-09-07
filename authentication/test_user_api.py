@@ -73,6 +73,7 @@ class UserTest(TestCase):
 
         self.create_url = reverse(self.namespace + ':register')
         self.login_url = reverse(self.namespace + ':login')
+        self.retrieve_user_url = reverse(self.namespace + ':specific_user')
 
     def test_create_user_api(self):
         response = self.client.post(self.create_url, self.body, format='json')
@@ -102,3 +103,13 @@ class UserTest(TestCase):
         self.assertEqual(400, response3.status_code)
         self.assertEqual(400, response4.status_code)
         self.assertContains(response, self.user)
+
+    def test_same_case(self):
+        self.user_body.update({'username':self.user_body['username'].upper()})
+        response= self.client.post(self.create_url, self.user_body, format='json')
+        self.assertEqual(400, response.status_code)
+
+
+    def test_retrieve_logged_in_user(self):
+        response = self.client.get(self.retrieve_user_url)
+        self.assertEqual(200, response.status_code)

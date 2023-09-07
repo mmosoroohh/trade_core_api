@@ -81,7 +81,6 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
     serializer_class = UserSerializer
 
     def get(self, request, *args, **kwargs):
-        import pdb;pdb.set_trace()
         """Retrieve user details asynchronously"""
         serializer = self.serializer_class(request.user)
 
