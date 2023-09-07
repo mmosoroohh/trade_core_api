@@ -32,6 +32,10 @@ class PostApiTest(TestCase):
             self.namespace + ':posts-detail', kwargs={'pk': self.post.id})
         self.retrieve_url = reverse(
             self.namespace + ':posts-detail', kwargs={'pk': self.post.id})
+        self.like_url = reverse(
+            self.namespace + ':posts-like', kwargs={'pk': self.post})
+        self.dislike_url = reverse(
+            self.namespace + ':posts-dislike', kwargs={'pk': self.post.id})
         
 
     def test_create_post_api(self):
@@ -66,3 +70,15 @@ class PostApiTest(TestCase):
         response = self.client.delete(self.delete_url)
  
         self.assertEqual(200, response.status_code)
+
+    
+    def test_like_post(self):
+        import pdb;pdb.set_trace()
+        res = self.client.post(self.like_url)
+        import pdb;pdb.set_trace()
+        self.assertEqual(200, res.status_code)
+
+    def test_dislike_post(self):
+        res = self.client.post(self.dislike_url)
+        self.assertEqual(200, res.status_code)
+

@@ -6,6 +6,6 @@ from .views import (
 urlpatterns = [
     path('posts/', ListCreatePostView.as_view(), name="posts-list-create"),
     path('posts/<int:pk>/', PostDetailView.as_view(), name="posts-detail"),
-    path('posts/like/<int:pk>/', LikePostAPIView.as_view(), name='like'),
-    path('posts/dislike/<int:pk>/', DislikePostAPIView.as_view(), name='dislike'),
+    path('posts/like/<int:pk>/', LikePostAPIView.as_view(), name='posts-like'),
+    path('posts/dislike/<int:pk>/', DislikePostAPIView.as_view(), name='posts-dislike'),
 ]

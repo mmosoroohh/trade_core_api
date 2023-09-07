@@ -81,6 +81,7 @@ class LikePostAPIView(generics.RetrieveUpdateDestroyAPIView):
     """Like a post"""
 
     permission_classes = (IsAuthenticated,)
+    queryset = Post.objects.all()
     serializer_class = PostSerializer
 
     def post(self, request,  *args, **kwargs):
@@ -112,6 +113,7 @@ class DislikePostAPIView(generics.RetrieveUpdateDestroyAPIView):
     """Dislike a post."""
 
     permission_classes = (IsAuthenticated,)
+    queryset = Post.objects.all()
     serializer_class = PostSerializer
 
     def post(self, request,  *args, **kwargs):
