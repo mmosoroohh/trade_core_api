@@ -98,6 +98,7 @@ In order to install and run this project locally, you would need to have the fol
 
 </table>
 
-
+#### Note
+ - Setup Circle CI but I have an issue with my postgres connection with the app kindly run locally
 ### Authors
 - Arnold Osoro - [mmosoroohh](https://github.com/mmosoroohh)
