@@ -6,7 +6,6 @@ from .renderers import UserJSONRenderer
 import requests
 from datetime import datetime
 import holidays
-import asyncio
 from .backend import JWTAuthentication
 
 # Create your views here.
