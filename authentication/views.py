@@ -14,9 +14,6 @@ from .serializers import (
     RegistrationSerializer, LoginSerializer, UserSerializer
 )
 
-
-
-
 auth = JWTAuthentication()
 
 class RegistrationAPIView(CreateAPIView):
@@ -33,7 +30,7 @@ class RegistrationAPIView(CreateAPIView):
         # Get the user's IP address from the request
         # user_ip = request.META.get('REMOTE_ADDR')
         
-        user_ip='196.216.242.131'
+        user_ip='196.216.242.131'   ## For testing purpose
         # Use the ipinfo.io API to determine the user's country
         response = requests.get(f'https://ipinfo.io/{user_ip}/json')
         data = response.json()
@@ -59,8 +56,7 @@ class RegistrationAPIView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         success_message={
-            "success": "Signup successful",
-            'is_holiday': is_holiday
+            "success": "Signup successful"
         }
         return Response(success_message, status=status.HTTP_201_CREATED)
 

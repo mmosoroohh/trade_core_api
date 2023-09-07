@@ -13,3 +13,4 @@ class UserFactory(factory.django.DjangoModelFactory):
     email = factory.Sequence(lambda n: 'example_%s@map.com' % n)
     password = factory.PostGenerationMethodCall('set_password', '1234abcd')
     is_activated = True
+    is_holiday = False

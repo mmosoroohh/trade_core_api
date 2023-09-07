@@ -16,7 +16,7 @@ In order to install and run this project locally, you would need to have the fol
 
 * Navigate to the project directory `cd trade_core/`
 
-* Create a virtual environment
+* Create a virtual environment `virtualenv <env-name>`
 
 * Install dependencies `pip3 install -r requirements.txt`
 * Edit `trade_core/settings.py` database credentials to your database instance
@@ -33,7 +33,9 @@ In order to install and run this project locally, you would need to have the fol
 
 * To run tests `python manage.py test`
 
-* To run test coverage `coverage report -m`
+* To run test coverage 
+  -  `chmod +x run_tests.py`
+  -  `coverage report -m`
 
 
 ## Testing API endpoints

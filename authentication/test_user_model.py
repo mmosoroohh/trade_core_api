@@ -18,7 +18,7 @@ class UserTest(TestCase):
         self.body = {
             'username': faker.first_name(),
             'email': faker.email(),
-            'password': faker.password()            
+            'password': faker.password()         
         }
 
     def test_create_user(self):

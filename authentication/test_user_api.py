@@ -22,44 +22,52 @@ class UserTest(TestCase):
         self.body = {
                 'username': faker.first_name(),
                 'email': faker.email(),
-                'password': faker.password()
+                'password': faker.password(),
+                'is_holiday': faker.boolean(chance_of_getting_true=50)
             }
         self.user_body = {
                 'username': self.user.username,
                 'email': self.user.email,
-                'password': '1234abcd'
+                'password': '1234abcd',
+                'is_holiday': faker.boolean(chance_of_getting_true=50) 
         }
         self.new_user_body = {
                 'username': self.user.username,
                 'email': self.user.email,
-                'password': '1234abcde'
+                'password': '1234abcde',
+                'is_holiday': faker.boolean(chance_of_getting_true=50) 
         }
         self.not_exist= {
                 'username': faker.first_name(),
                 'email': faker.email(),
-                'password': faker.password()
+                'password': faker.password(),
+                'is_holiday': faker.boolean(chance_of_getting_true=50) 
             }
 
         self.no_email= {
                 'username': faker.first_name(),
                 'email': '',
-                'password': faker.password()
+                'password': faker.password(),
+                'is_holiday': faker.boolean(chance_of_getting_true=50) 
             }
         self.no_username= {
                 'username': '',
                 'email': faker.email(),
-                'password': faker.password()
+                'password': faker.password(),
+                'is_holiday': faker.boolean(chance_of_getting_true=50) 
 
         }
         self.email_format= {
                 'username': faker.first_name(),
                 'email': 'emailformat',
-                'password': faker.password()
+                'password': faker.password(),
+                'is_holiday': faker.boolean(chance_of_getting_true=50) 
             }
         self.password_length= {
                 'username': faker.first_name(),
                 'email': 'emailformat',
-                'password': 'pass'
+                'password': 'pass',
+                'is_holiday': faker.boolean(chance_of_getting_true=50) 
             }
         self.token = 'token'
 
