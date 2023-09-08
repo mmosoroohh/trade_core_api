@@ -9,13 +9,13 @@ from factories.posts import PostFactory
 from .models import Post
 
 
-class ProfileModelTest(TestCase):
+class PostModelTest(TestCase):
     def setUp(self):
         self.data = {
             'title': 'this is a title',
         }
 
-    def test_model_can_create_profile(self):
+    def test_model_can_create_post(self):
         post = PostFactory(title=self.data.get('title'))
         saved_post = Post.objects.get(title=self.data.get('title'))
         self.assertEqual(post, saved_post)
